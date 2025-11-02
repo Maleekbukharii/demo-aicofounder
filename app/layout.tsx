@@ -7,9 +7,12 @@ import "./globals.css"
 const _figtree = Figtree({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.app",
+  title: "aicofounder.com",
+  description: "let's make something people actually want",
+  generator: "aicofounder.com",
+  icons: {
+    icon: "/logotab.png",
+  },
 }
 
 export default function RootLayout({

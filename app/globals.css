@@ -136,7 +136,7 @@
 }
 
 .dots-pattern {
-  background-image: radial-gradient(circle, #d0d0d0 1px, transparent 1px);
+  background-image: radial-gradient(circle, #d0d0d0 2px, transparent 2px);
   background-size: 40px 40px;
   background-position: 0 0;
 }
