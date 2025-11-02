@@ -145,13 +145,20 @@ export default function Header() {
               >
                 Get started
               </Link>
-              <Link 
-                href="/signin"
+              <Link href="/signin"
                 onClick={() => setIsMenuOpen(false)}
-                className="block w-full px-4 py-3 text-center font-medium text-foreground bg-white hover:bg-gray-50 border border-border rounded-md transition duration-200 ease-in-out"
-              >
+                className="block w-full px-4 py-3 text-center font-medium text-foreground border border-border rounded-md transition duration-200 ease-in-out !bg-[#F2F1EC] hover:!bg-[#ECE9E2]"
+                >
                 Sign in
               </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  )
+}
+
             </div>
           </div>
         </div>
