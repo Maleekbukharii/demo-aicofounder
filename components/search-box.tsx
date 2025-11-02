@@ -53,26 +53,27 @@ export default function SearchBox() {
   const isDisabled = !query.trim()
 
   return (
-    <>
+    <div className="max-w-3xl mx-auto p-6">
       <form 
         onSubmit={handleSubmit}
-        className="relative mb-4 p-3 bg-background border rounded-3xl shadow-md transition-all duration-200 ease-in-out border-border hover:border-foreground/20"
+        className="relative mb-4 p-3 border rounded-3xl shadow-md transition-all duration-200 ease-in-out border-gray-300 hover:border-gray-400"
+        style={{ backgroundColor: "#FAFAF7" }}
       >
         <textarea
           ref={textareaRef}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder={displayText || "I want to build a meal plannin"}
-          className="w-full pr-12 rounded-md px-2 py-2 text-base text-foreground bg-transparent placeholder:text-foreground/50 focus:outline-none resize-none overflow-y-auto"
-          style={{ minHeight: '110px', maxHeight: '192px' }}
+          placeholder={displayText || "I want to build a meal planning"}
+          className="w-full pr-12 rounded-md px-2 py-2 text-base text-gray-900 placeholder:text-gray-500 focus:outline-none resize-none overflow-y-auto"
+          style={{ minHeight: '110px', maxHeight: '192px', backgroundColor: 'transparent' }}
           autoFocus
         />
         <button
           type="submit"
           className={`absolute bottom-3 right-3 w-[34px] h-[34px] flex items-center justify-center text-white rounded-[12px] transition-all duration-200 ease-in-out ${
             isDisabled 
-              ? 'bg-accent/50 cursor-default' 
-              : 'bg-accent hover:bg-accent/90 cursor-pointer'
+              ? 'bg-orange-300 cursor-default' 
+              : 'bg-orange-500 hover:bg-orange-600 cursor-pointer'
           }`}
           aria-label="Send message"
           disabled={isDisabled}
@@ -96,7 +97,7 @@ export default function SearchBox() {
         {/* Brainstorm Ideas Button */}
         <button
           type="button"
-          className="flex items-center gap-1.5 lg:gap-2 px-3 lg:px-4 py-1.5 lg:py-2 bg-gradient-to-b from-background to-secondary hover:bg-secondary border border-border hover:border-foreground/20 text-foreground/80 rounded-full shadow-sm transition-all duration-200 ease-in-out z-10"
+          className="flex items-center gap-1.5 lg:gap-2 px-3 lg:px-4 py-1.5 lg:py-2 bg-gradient-to-b from-white to-gray-100 hover:bg-gray-100 border border-gray-300 hover:border-gray-400 text-gray-700 rounded-full shadow-sm transition-all duration-200 ease-in-out z-10"
           aria-label="Brainstorm ideas"
         >
           <svg
@@ -122,19 +123,19 @@ export default function SearchBox() {
               fill="currentColor"
               strokeWidth="0"
               viewBox="0 0 256 256"
-              className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-foreground/70"
+              className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-gray-600"
               height="1em"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path d="M244,104H219.21L175.82,44.24a20,20,0,0,0-31.61-.94L131.39,58.16c-.1.11-.2.23-.29.35a4,4,0,0,1-6.2,0c-.09-.12-.19-.24-.29-.35L111.79,43.3a20,20,0,0,0-31.61.94L36.79,104H12a12,12,0,0,0,0,24H244a12,12,0,0,0,0-24ZM96.62,62.45l9.69,11.24a28,28,0,0,0,43.38,0l9.69-11.24L189.55,104H66.45ZM180,140a40.07,40.07,0,0,0-38.16,28H114.16a40,40,0,1,0,0,24h27.68A40,40,0,1,0,180,140ZM76,196a16,16,0,1,1,16-16A16,16,0,0,1,76,196Zm104,0a16,16,0,1,1,16-16A16,16,0,0,1,180,196Z"></path>
             </svg>
-            <span className="mr-0.5 lg:mr-1 text-xs lg:text-sm font-medium text-foreground/80">Privacy mode</span>
+            <span className="mr-0.5 lg:mr-1 text-xs lg:text-sm font-medium text-gray-700">Privacy mode</span>
             <button
               type="button"
               onClick={() => setPrivacyMode(!privacyMode)}
               className={`relative inline-flex h-5 w-9 lg:h-6 lg:w-11 items-center rounded-lg transition-colors duration-200 ease-in-out focus:outline-none ${
-                privacyMode ? "bg-accent" : "bg-muted"
+                privacyMode ? "bg-orange-500" : "bg-gray-300"
               }`}
               aria-label="Toggle privacy mode"
               aria-pressed={privacyMode}
@@ -149,6 +150,6 @@ export default function SearchBox() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
